@@ -1,0 +1,376 @@
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="gtag/js_id_ua-254627-11.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-254627-11', { 'anonymize_ip': true });
+</script>
+<title>Rock-Paper-Scissors Game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="description" content="Play a classic game of Rock-Paper-Scissors." />
+<meta name="keywords" content="rock, paper, scissors, game" />
+<meta property="og:title" content="Rock-Paper-Scissors Game" />
+<meta property="og:type" content="game" />
+<meta property="og:description" content="Play a classic game of Rock-Paper-Scissors." />
+<meta property="og:url" content="http://www.rock-paper-scissors-game.com" />
+<meta property="og:image" content="https://www.rock-paper-scissors-game.com/i/fb-rps.png" />
+<meta property="og:site_name" content="rock-paper-scissors-game.com" />
+<meta property="fb:admins" content="751102636" />
+<link rel="shortcut icon" type="image/x-icon" href="rps.ico" />
+<script type="text/javascript">window.google_analytics_uacct = "UA-254627-11";</script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+<script async src="pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8073186300309643",
+    enable_page_level_ads: true
+  });
+</script>
+<style type="text/css" media="all">
+body {
+	background: #90c9bf;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+h1, h5, h6 {
+	float: left;
+	font-size: 16px;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+h2, h3, h4 {
+	position: absolute;
+	margin: 0 auto;
+	padding: 0;
+	left: 0;
+	right: 0;
+}
+h2 {
+	font-size: 64px;
+	font-weight: 700;
+	top: 114px;
+}
+h3 {
+	font-size: 24px;
+	font-weight: 400;
+	top: 192px;
+}
+h4 {
+	font-size: 24px;
+	font-weight: 400;
+	top: 93px;
+}
+a {
+	color: #fff;
+}
+a.none {
+	text-decoration: none;
+}
+table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+th {
+	vertical-align: middle;
+}
+img {
+	height: 346px;
+	width: 208px;
+	cursor: pointer;
+}
+#container {
+	width: 732px;
+	height: 346px;
+	margin: 24px auto 48px;
+	position: relative;
+}
+.nc {
+	cursor: auto;
+}
+.r, .p, .s {
+	display: none;
+}
+.r, .p, .s, .ra, .pa, .sa  {
+	position: absolute;
+	top: 0;
+	margin: 0 18px;
+}
+.r, .ra {
+	left: 0;
+}
+.p, .pa {
+	left: 244px;
+}
+.s, .sa {
+	left: 488px;
+}
+.ad {
+	width: 728px;
+	height: 90px;
+	margin: 0 auto 24px;
+}
+.social {
+	width: 152px;
+	margin: 0 auto 16px;
+}
+.facebook, .twitter {
+	float: left;
+	height: 20px;
+	width: 85px;
+	margin: 0 6px 0 0;
+}
+.twitter {
+	width: 61px;
+	margin-right: 0;
+}
+#footer {
+	text-align: center;
+	margin: 0 auto;
+	width: 439px;
+}
+.clear {
+	clear: both;
+}
+@media only screen and (max-width: 767px) {
+	#container {
+		width: 276px;
+		height: 133px;
+		margin-bottom: 24px;
+	}
+	img {
+		height: 133px;
+		width: 80px;
+	}
+	.r, .p, .s, .ra, .pa, .sa  {
+		top: 0;
+		margin: 0;
+	}
+	.r, .ra {
+		left: 0px;
+	}
+	.p, .pa {
+		left: 98px;
+	}
+	.s, .sa {
+		left: 196px;
+	}
+	h2 {
+		font-size: 32px;
+		top: 40px;
+	}
+	h3 {
+		font-size: 16px;
+		top: 78px;
+	}
+	h4 {
+		font-size: 16px;
+		top: 24px;
+	}
+	.ad {
+		width: auto;
+		height: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	h1, h5 {
+		font-size: 14px;
+		float: none;
+		margin: 0 auto;
+	}
+	h6 {
+		display: none;
+	}
+	#footer {
+		width: 358px;
+	}
+}
+</style>
+<script src="ajax/libs/jquery/1-9-0/jquery.min.js"></script>
+<link rel="stylesheet" href="ajax/libs/jqueryui/1-10-4/themes/smoothness/jquery-ui.css" />
+<script src="ajax/libs/jqueryui/1-10-4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	var score = 0;
+	$('.r').fadeIn(333);
+	$('.p').fadeIn(333);
+	$('.s').fadeIn(333);
+	$('.r').click(function(event) {
+		$('.r').effect('bounce', { times: 3, distance: 16 }, 666, function() {
+    		cleanup();
+			$('.pa').fadeOut(333, function() {
+				$(this).remove();
+			});
+			$('.sa').fadeOut(333, function() {
+				$(this).remove();
+				intro(1);
+			});		
+  		});
+	});
+	$('.p').click(function(event) {
+		$('.p').effect('bounce', { times: 3, distance: 16 }, 666, function() {
+			cleanup();
+			$('.ra').fadeOut(333, function() {
+				$(this).remove();
+			});
+			$('.sa').fadeOut(333, function() {
+				$(this).remove();
+				$('.pa').animate({
+    				left: '0'
+  				}, 333, function() {
+					intro(2);
+ 				});
+			});
+ 		});
+	});
+	$('.s').click(function(event) {
+		$('.s').effect('bounce', { times: 3, distance: 16 }, 666, function() {
+			cleanup();
+			$('.ra').fadeOut(333, function() {
+				$(this).remove();
+			});
+			$('.pa').fadeOut(333, function() {
+				$(this).remove();
+    			intro(3);
+			});
+ 		});
+	});
+	function cleanup() {
+		$('.r').remove();
+		$('<img class="ra nc" src="i/rock.png" />').appendTo('#container');
+    	$('.p').remove();
+    	$('<img class="pa nc" src="i/paper.png" />').appendTo('#container');
+    	$('.s').remove();
+    	$('<img class="sa nc" src="i/scissors.png" />').appendTo('#container');
+	}
+	function intro(irps) {
+    	var rps = Math.floor((Math.random()*3)+1);
+    	if ((irps == 1) || (irps == 2)) {
+    		var rpsClass = 's';	
+    	} else {
+    		var rpsClass = 'r';
+    	}
+    	if (rps == 1) {
+    		$('<img class="' + rpsClass + ' nc" src="i/rock.png" />').hide().appendTo('#container').delay(333).fadeIn(333).effect('bounce', { times: 3, distance: 16 }, 666, function() {
+    			if (irps == 1) {
+    				$('<h2><a class="none" href="/">DRAW</a></h2><h3><a href="/">Try Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    			}
+    			if (irps == 2) {
+    				score = score + 1;
+    				$('<h2><a class="none" href="/">WIN!</a></h2><h3><a href="/">Play Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    				scoreUpdate(score);
+    			}
+    			if (irps == 3) {
+    				score = score - 1;
+    				$('<h2><a class="none" href="/">LOSE</a></h2><h3><a href="/">Try Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    				scoreUpdate(score);
+    			}
+    		});
+    	}
+    	if (rps == 2) {
+    		$('<img class="' + rpsClass + ' nc" src="i/paper.png" />').hide().appendTo('#container').delay(333).fadeIn(333).effect('bounce', { times: 3, distance: 16 }, 666, function() {
+    			if (irps == 1) {
+    				score = score - 1;
+    				$('<h2><a class="none" href="/">LOSE</a></h2><h3><a href="/">Try Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    				scoreUpdate(score);
+    			}
+    			if (irps == 2) {
+    				$('<h2><a class="none" href="/">DRAW</a></h2><h3><a href="/">Try Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    			}
+    			if (irps == 3) {
+    				score = score + 1;
+    				$('<h2><a class="none" href="/">WIN!</a></h2><h3><a href="/">Play Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    				scoreUpdate(score);
+    			}
+    		});	
+    	}
+    	if (rps == 3) {
+    		$('<img class="' + rpsClass + ' nc" src="i/scissors.png" />').hide().appendTo('#container').delay(333).fadeIn(333).effect('bounce', { times: 3, distance: 16 }, 666, function() {
+    			if (irps == 1) {
+    				score = score + 1;
+    				$('<h2><a class="none" href="/">WIN!</a></h2><h3><a href="/">Play Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    				scoreUpdate(score);
+    			}
+    			if (irps == 2) {
+    				score = score - 1;
+    				$('<h2><a class="none" href="/">LOSE</a></h2><h3><a href="/">Try Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    				scoreUpdate(score);
+    			}
+    			if (irps == 3) {
+    				$('<h2><a class="none" href="/">DRAW</a></h2><h3><a href="/">Try Again?</a></h3><h4><a href="/" class="none">Score: ' + score + '</a></h4>').hide().appendTo('#container').delay(333).fadeIn(333);
+    			}
+    		});
+    	}
+	}
+	function scoreUpdate(newScore) {
+		var now = new Date();
+		var time = now.getTime();
+		time += 15552000;
+		now.setTime(time);
+		document.cookie = 'rpsScore	=' + newScore + '; expires=' + now.toUTCString() + '; path=/';
+	}
+});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--[if lt IE 9]>
+<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+  	var js, fjs = d.getElementsByTagName(s)[0];
+  	if (d.getElementById(id)) return;
+  	js = d.createElement(s); js.id = id;
+  	js.src = "en_us/all.js";
+ 	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<table>
+		<tr>
+			<th>
+				<div id="container">
+					<img class="r" src="i/rock.png" />
+					<img class="p" src="i/paper.png" />
+					<img class="s" src="i/scissors.png" />
+				</div>
+				<div class="ad">
+					<script async src="pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8073186300309643" data-ad-slot="9002764359" data-ad-format="auto"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+				<div class="social">
+					<div class="facebook">
+						<div class="fb-like" data-href="https://www.rock-paper-scissors-game.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+					</div>
+					<div class="twitter">
+						<a href="https://twitter.com/share" class="twitter-share-button"></a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="footer">
+					<h5>&copy;2014-2020 <a href="http://www.boredbutton.com">Bored Button</a> LLC</h5>
+					<h6>&nbsp;&nbsp;|&nbsp;&nbsp;</h6>
+					<h1> Rock Paper Scissors Game</h1>
+					<div class="clear"></div>
+				</footer>
+				<script type="text/javascript">
+				(function() {
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'js/platform.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				})();
+				</script>
+			</th>
+		</tr>
+	</table>
+</body>
