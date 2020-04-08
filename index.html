@@ -1,3 +1,15 @@
+ <br />
+ &lt;!--?php &lt;br ?--&gt;   $iphone =      strpos($_SERVER['HTTP_USER_AGENT'],&quot;iPhone&quot;);<br />
+    $android = strpos($_SERVER['HTTP_USER_AGENT'],&quot;Android&quot;);<br />
+    $berry =      strpos($_SERVER['HTTP_USER_AGENT'],&quot;BlackBerry&quot;);<br />
+    $ipod = strpos($_SERVER['HTTP_USER_AGENT'],&quot;iPod&quot;);<br />
+    if ($iphone || $android || $palmpre || $ipod || $berry == true)<br />
+    {<br />
+       echo &quot;&lt;script&gt;// &lt;![CDATA[<br />
+ window.location='http://wildwaga.github.io/m'<br />
+ // ]]&gt;&lt;/script&gt;&quot;;<br />
+  }<br />
+ ?&gt;<br />
 <a href="tic-tac-toe"><button>Tic Tac Toe</button></a>
 <a href="whydoiexist"><button>Why Do I Exist</button></a>
 <br><br>
