@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "game",
+"productVersion": "1.1.1-preview",
+"dataUrl": "mffps.data.unityweb",
+"wasmCodeUrl": "mffps.wasm.code.unityweb",
+"wasmFrameworkUrl": "mffps.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.14f1"
+}
