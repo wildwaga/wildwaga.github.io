@@ -14,7 +14,11 @@
     <link rel="icon" type="image/png" href="favicon.ico">
   </head>
   <body>
-    <audio src="mus_dogsong.ogg" autoplay loop></audio>
+    <audio controls loop>
+	<source src="mus_dogsong.ogg" type="audio/ogg">
+	<source src="mus_dogsong.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+	</audio>
     <div class="center-outer">
       <div class="center-inner">
         <div id="YELLING">
