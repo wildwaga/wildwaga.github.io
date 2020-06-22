@@ -14,11 +14,18 @@
     <link rel="icon" type="image/png" href="favicon.ico">
   </head>
   <body>
-    <audio controls loop autoplay>
-	<source src="mus_dogsong.ogg" type="audio/ogg">
-	<source src="mus_dogsong.mp3" type="audio/mpeg">
-	Your browser does not support the audio element.
-	</audio>
+	  <h4>Mobile browsers click here</h4>
+    		<button type="button" id="paudio" onclick="playAudio()">Play audio</button>
+   		<script type="text/javascript">
+
+    		var audio = new Audio('music.mp3');
+   		audio.loop = true;
+    		var playAudio = function() {
+        	audio.play();
+   		}
+    		document.getElementById("paudio").click()
+
+    		</script>
     <div class="center-outer">
       <div class="center-inner">
         <div id="YELLING">
