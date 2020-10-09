@@ -1,0 +1,16 @@
+{
+"companyName": "Basically Games",
+"productName": "Baldi's Basics in Education and Learning",
+"productVersion": "1.4.3",
+"dataUrl": "baldi webgl test.data.unityweb",
+"wasmCodeUrl": "baldi webgl test.wasm.code.unityweb",
+"wasmFrameworkUrl": "baldi webgl test.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.8f1"
+}
