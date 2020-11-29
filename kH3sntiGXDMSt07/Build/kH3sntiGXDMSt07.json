@@ -1,0 +1,16 @@
+{
+"companyName": "Compute Games",
+"productName": "MFFPS",
+"productVersion": "1.8.2",
+"dataUrl": "kH3sntiGXDMSt07.data.unityweb",
+"wasmCodeUrl": "kH3sntiGXDMSt07.wasm.code.unityweb",
+"wasmFrameworkUrl": "kH3sntiGXDMSt07.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": true,
+"multithreading": false,
+"unityVersion": "2019.3.14f1"
+}
